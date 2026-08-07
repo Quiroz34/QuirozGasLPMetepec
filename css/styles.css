@@ -4,26 +4,26 @@
 
 /* Color Palette Variables */
 :root {
-  --primary: #1e40af; /* Azul Zafiro Real (Tema Oficial Arriagas) */
-  --primary-hover: #1d4ed8; /* Azul Zafiro Intenso */
-  --primary-light: #3b82f6; /* Azul Claro Elementor */
-  --primary-dark: #0f172a; /* Fondo Oscuro Slate Navy */
+  --primary: #0b1a30; /* Azul Marino Corporativo Profundo */
+  --primary-hover: #1e3a8a; /* Azul Eléctrico Elegante */
+  --primary-light: #f1f5f9; /* Fondo de sección Gris Slate Claro */
+  --primary-dark: #070f1e; /* Fondo de sección Negro Azulado */
 
-  --accent-amber: #d97706; /* Ambar / Dorado Arriagas */
-  --accent-gold: #f59e0b; /* Dorado Metalico */
+  --accent-amber: #a17a4c; /* Ámbar Elegante / Dorado Metálico */
+  --accent-gold: #c2a679; /* Dorado Champán Premium */
   --whatsapp: #25d366; /* Verde WhatsApp Oficial */
 
-  --bg-page: #f4f5f7; /* Fondo Gris Claro Elementor */
+  --bg-page: #f8fafc; /* Fondo de página ultra-limpio (Slate-50) */
   --bg-white: #ffffff;
-  --bg-dark: #0f172a; /* Fondo Oscuro Secciones */
+  --bg-dark: #070f1e; /* Fondo Oscuro Secciones */
 
-  --text-main: #1f2937; /* Texto Principal */
-  --text-muted: #4b5563; /* Texto Secundario */
+  --text-main: #0f172a; /* Texto Principal (Slate-900) */
+  --text-muted: #475569; /* Texto Secundario (Slate-600) */
   --text-white: #ffffff;
 
-  --border-color: #e5e7eb;
-  --radius-card: 20px;
-  --radius-sm: 8px;
+  --border-color: #e2e8f0; /* Borde suave (Slate-200) */
+  --radius-card: 16px; /* Bordes ligeramente más rectos y modernos */
+  --radius-sm: 6px;
   --radius-full: 9999px;
   --max-width: 1140px;
 }
@@ -142,8 +142,10 @@ ul {
   position: relative;
   border-radius: var(--radius-card);
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  background-color: #e5e7eb;
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.06),
+    0 1px 3px rgba(15, 23, 42, 0.02);
+  background-color: #f1f5f9;
   min-height: 320px;
   transition:
     transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
@@ -152,7 +154,7 @@ ul {
 
 .image-box-wrapper:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(30, 64, 175, 0.2);
+  box-shadow: 0 20px 40px rgba(7, 15, 30, 0.12);
 }
 
 .zoom-image {
@@ -234,7 +236,7 @@ ul {
 }
 
 .site-header.scrolled {
-  box-shadow: 0 8px 24px rgba(4, 120, 87, 0.12);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
 }
 
 .header-container {
@@ -265,7 +267,7 @@ ul {
   align-items: center;
   justify-content: center;
   font-size: 1.4rem;
-  box-shadow: 0 4px 12px rgba(4, 120, 87, 0.25);
+  box-shadow: 0 4px 12px rgba(194, 166, 121, 0.2);
 }
 
 .brand-logo-text {
@@ -380,9 +382,9 @@ ul {
 .hero-subtitle-small {
   font-size: 0.95rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #e2e8f0;
+  color: var(--accent-gold);
   margin-bottom: 12px;
 }
 
@@ -398,8 +400,12 @@ ul {
 .hero-divider {
   width: 100%;
   max-width: 420px;
-  height: 2px;
-  background-color: rgba(255, 255, 255, 0.4);
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--accent-gold) 0%,
+    rgba(194, 166, 121, 0) 100%
+  );
   border: none;
   margin-bottom: 24px;
 }
@@ -418,21 +424,24 @@ ul {
 }
 
 .hero-badge-card {
-  background: rgba(30, 64, 175, 0.92);
-  backdrop-filter: blur(8px);
+  background: rgba(11, 26, 48, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(194, 166, 121, 0.35);
   color: white;
   padding: 24px 32px;
   border-radius: var(--radius-card);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 35px rgba(7, 15, 30, 0.25);
   max-width: 380px;
   transition:
     transform 0.4s ease,
-    box-shadow 0.4s ease;
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
 }
 
 .hero-badge-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(30, 64, 175, 0.3);
+  box-shadow: 0 20px 45px rgba(7, 15, 30, 0.35);
+  border-color: rgba(194, 166, 121, 0.6);
 }
 
 .hero-badge-card h3 {
@@ -448,8 +457,8 @@ ul {
 
 .category-bar-card {
   background-color: white;
-  border-radius: var(--radius-sm);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-card);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
   display: flex;
   align-items: center;
   padding: 16px 24px;
@@ -546,13 +555,14 @@ ul {
 
 .bullet-list-2col li::before,
 .bullet-list-single li::before {
-  content: "o";
+  content: "✓";
   position: absolute;
   left: 0;
-  color: var(--primary);
-  font-size: 1.4rem;
-  line-height: 1;
-  top: -2px;
+  color: var(--accent-gold);
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.2;
+  top: 3px;
 }
 
 /* Coverage Split Section */
@@ -670,14 +680,17 @@ ul {
   border-radius: var(--radius-card);
   padding: 48px;
   margin: 40px 0;
+  border: 1px solid rgba(194, 166, 121, 0.2);
   transition:
     transform 0.4s ease,
-    box-shadow 0.4s ease;
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
 }
 
 .pricing-card-box:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.4);
+  box-shadow: 0 20px 45px rgba(7, 15, 30, 0.4);
+  border-color: rgba(194, 166, 121, 0.45);
 }
 
 .pricing-card-box h2 {
@@ -1062,6 +1075,23 @@ ul {
 }
 
 @media (max-width: 768px) {
+  .top-bar-container {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
+
+  .top-bar-left {
+    display: none;
+  }
+
+  .top-bar-right {
+    justify-content: center;
+    font-size: 0.8rem;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+  }
+
   .header-right-contact,
   .nav-menu {
     display: none;
@@ -1075,19 +1105,46 @@ ul {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 90px;
+    top: 80px;
     left: 0;
     width: 100%;
     background: white;
     padding: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    border-bottom: 1px solid var(--border-color);
   }
 
   .hero-title-main {
-    font-size: 2.1rem;
+    font-size: 2.2rem;
+  }
+
+  .category-bar-card {
+    gap: 12px 16px;
+    padding: 12px 16px;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .category-item {
+    padding: 4px;
+    gap: 4px;
+  }
+
+  .category-item-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .bullet-list-2col {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   .why-us-grid {
     grid-template-columns: 1fr;
+  }
+
+  .pricing-card-box {
+    padding: 32px 20px;
   }
 }
