@@ -92,6 +92,11 @@ html {
   text-rendering: optimizeLegibility;
 }
 
+section[id],
+div[id] {
+  scroll-margin-top: 96px;
+}
+
 body {
   overflow-x: hidden;
   background-color: var(--bg-page);
@@ -958,14 +963,25 @@ ul {
 /* ==========================================================================
    Tank Estimator / Calculadora Interactiva (Luxury Configurator)
    ========================================================================== */
+/* ==========================================================================
+   Tank Telemetry & Estimator (Ultra-Compact Executive Dashboard)
+   ========================================================================== */
+.telemetry-section {
+  padding: 24px 0;
+  background: radial-gradient(circle at 50% 10%, #0c1629 0%, #040812 100%);
+  border-top: 1px solid rgba(197, 160, 89, 0.18);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.18);
+}
+
 .tank-calculator-card {
-  background: linear-gradient(145deg, #091322 0%, #040810 100%);
+  max-width: 920px;
+  margin: 0 auto;
+  background: linear-gradient(145deg, #08111e 0%, #03070e 100%);
   backdrop-filter: blur(20px);
   border: 1px solid var(--border-gold-subtle);
-  border-radius: var(--radius-card);
-  padding: clamp(32px, 5vw, 48px);
+  border-radius: var(--radius-sm);
+  padding: 18px 22px;
   color: white;
-  margin: 20px 0;
   box-shadow: var(--shadow-dark);
   position: relative;
   overflow: hidden;
@@ -976,52 +992,66 @@ ul {
   position: absolute;
   top: 0;
   right: 0;
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, rgba(197, 160, 89, 0.1) 0%, transparent 70%);
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(197, 160, 89, 0.08) 0%, transparent 70%);
   pointer-events: none;
 }
 
 .tank-calc-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-bottom: 28px;
+  margin-bottom: 10px;
+}
+
+.tank-calc-header .section-tag-gold {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  margin-bottom: 2px;
 }
 
 .tank-calc-header h2 {
   font-family: "Outfit", sans-serif;
-  font-size: clamp(1.7rem, 4vw, 2.2rem);
+  font-size: clamp(1.18rem, 2.2vw, 1.38rem);
   font-weight: 800;
   color: white;
   letter-spacing: -0.02em;
+  margin-bottom: 2px;
 }
 
 .tank-calc-header p {
   color: #94a3b8;
-  font-size: 0.96rem;
-  max-width: 600px;
-  line-height: 1.6;
+  font-size: 0.8rem;
+  max-width: 650px;
+  line-height: 1.4;
+  margin: 0;
 }
 
 /* Visual Level Bar Indicator */
 .tank-level-visual {
-  margin-bottom: 24px;
-  background: rgba(255, 255, 255, 0.03);
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.025);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: var(--radius-sm);
-  padding: 14px 20px;
+  border-radius: 6px;
+  padding: 6px 12px;
+}
+
+.tank-level-scale {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #64748b;
+  margin-bottom: 3px;
+  padding: 0 2px;
+  letter-spacing: 0.04em;
 }
 
 .tank-level-track {
   width: 100%;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.08);
+  height: 5px;
+  background: rgba(255, 255, 255, 0.07);
   border-radius: var(--radius-full);
   overflow: hidden;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   position: relative;
 }
 
@@ -1029,76 +1059,77 @@ ul {
   height: 100%;
   background: var(--gold-gradient);
   border-radius: var(--radius-full);
-  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 0 12px rgba(197, 160, 89, 0.5);
+  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 10px rgba(197, 160, 89, 0.45);
 }
 
 .tank-level-meta {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.82rem;
+  font-size: 0.74rem;
   color: #cbd5e1;
 }
 
-.tank-level-meta strong {
+.tank-cap-indicator strong {
   color: var(--accent-gold-light);
   font-family: "Outfit", sans-serif;
-  font-size: 0.95rem;
+  font-size: 0.84rem;
 }
 
 .tank-fill-calibrated {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   color: var(--whatsapp);
   font-weight: 600;
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
 }
 
 .tank-presets-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 12px;
-  margin-bottom: 26px;
+  gap: 6px;
+  margin-bottom: 10px;
 }
 
 .tank-preset-btn {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   color: white;
-  padding: 16px 8px;
-  border-radius: var(--radius-sm);
+  padding: 6px 3px;
+  border-radius: 6px;
   text-align: center;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  min-height: 80px;
+  gap: 1px;
+  min-height: 46px;
   user-select: none;
 }
 
 .tank-preset-btn:hover {
   background: rgba(197, 160, 89, 0.1);
-  border-color: rgba(197, 160, 89, 0.45);
-  transform: translateY(-2px);
+  border-color: rgba(197, 160, 89, 0.4);
+  transform: translateY(-1px);
 }
 
 .tank-preset-btn.active {
-  background: linear-gradient(145deg, rgba(197, 160, 89, 0.22) 0%, rgba(158, 122, 58, 0.28) 100%);
+  background: linear-gradient(145deg, rgba(197, 160, 89, 0.22) 0%, rgba(158, 122, 58, 0.24) 100%);
   border-color: var(--accent-gold);
-  box-shadow: 0 0 24px rgba(197, 160, 89, 0.28);
+  box-shadow: 0 0 14px rgba(197, 160, 89, 0.25);
 }
 
 .tank-preset-btn .preset-cap {
   font-family: "Outfit", sans-serif;
-  font-size: 1.25rem;
+  font-size: 0.98rem;
   font-weight: 700;
   color: #ffffff;
+  line-height: 1.1;
 }
 
 .tank-preset-btn.active .preset-cap {
@@ -1106,30 +1137,30 @@ ul {
 }
 
 .tank-preset-btn .preset-label {
-  font-size: 0.72rem;
+  font-size: 0.58rem;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.03em;
   color: #94a3b8;
   font-weight: 600;
   white-space: nowrap;
 }
 
 .tank-calc-output-box {
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(197, 160, 89, 0.22);
-  border-radius: var(--radius-sm);
-  padding: 20px 26px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  border-radius: 6px;
+  padding: 8px 14px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
 }
 
 .tank-calc-details {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
@@ -1139,22 +1170,30 @@ ul {
 }
 
 .tank-calc-stat .stat-label {
-  font-size: 0.72rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
-  color: #94a3b8;
-  letter-spacing: 0.08em;
+  color: #8899ac;
+  letter-spacing: 0.05em;
   font-weight: 700;
 }
 
 .tank-calc-stat .stat-val {
   font-family: "Outfit", sans-serif;
-  font-size: 1.15rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: #ffffff;
 }
 
 .tank-calc-stat .stat-val.gold {
   color: var(--accent-gold-light);
+}
+
+#calc-order-btn {
+  min-height: 36px;
+  padding: 5px 16px;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  gap: 6px;
 }
 
 /* ==========================================================================
@@ -1338,7 +1377,7 @@ ul {
 }
 
 /* ==========================================================================
-   Buttons System (Refined Satin Shimmer)
+   Buttons System (Executive Satin & Glass)
    ========================================================================== */
 .btn {
   display: inline-flex;
@@ -1346,7 +1385,7 @@ ul {
   justify-content: center;
   gap: 8px;
   padding: 12px 28px;
-  min-height: 50px;
+  min-height: 52px;
   border-radius: var(--radius-sm);
   font-weight: 700;
   font-size: 0.95rem;
@@ -1377,73 +1416,121 @@ ul {
 
 .btn-gold {
   background: var(--gold-gradient);
-  color: var(--primary-dark);
+  color: #050a14;
   font-weight: 800;
-  box-shadow: var(--shadow-gold);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 24px -4px rgba(197, 160, 89, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .btn-gold:hover {
-  box-shadow: 0 10px 30px rgba(197, 160, 89, 0.45);
-  filter: brightness(1.05);
+  box-shadow: 0 12px 32px rgba(197, 160, 89, 0.55);
+  filter: brightness(1.06);
+}
+
+.btn-glass {
+  background: rgba(9, 17, 34, 0.75);
+  color: #ffffff;
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.btn-glass:hover {
+  background: rgba(14, 28, 54, 0.9);
+  border-color: var(--accent-gold-light);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* ==========================================================================
-   Testimonials Section (Compact Luxury Card Grid)
+   Tank Telemetry & Scale Indicator (Interactive Dashboard)
+   ========================================================================== */
+.telemetry-section {
+  background: radial-gradient(circle at 50% 10%, #0c1629 0%, #040812 100%);
+  border-top: 1px solid rgba(197, 160, 89, 0.18);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.18);
+}
+
+.tank-level-scale {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #64748b;
+  margin-bottom: 6px;
+  padding: 0 2px;
+  letter-spacing: 0.04em;
+}
+
+.tank-cap-indicator {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+}
+
+/* ==========================================================================
+   Testimonials Section (Compact Luxury Card Grid & SVG Stars)
    ========================================================================== */
 .testimonials-section {
-  padding: clamp(34px, 5vw, 52px) 0;
+  padding: clamp(48px, 7vw, 72px) 0;
   background-color: var(--bg-page);
   position: relative;
 }
 
 .testimonials-header {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 30px;
 }
 
 .testimonials-header h2 {
   font-family: "Outfit", sans-serif;
-  font-size: clamp(1.65rem, 3.6vw, 2.05rem);
+  font-size: clamp(1.75rem, 3.8vw, 2.25rem);
   font-weight: 800;
   color: var(--primary);
   margin-bottom: 6px;
   letter-spacing: -0.02em;
 }
 
-.testimonials-header p {
-  font-size: 0.92rem;
-  color: var(--text-muted);
-}
-
 .testimonials-rating-pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   background: #ffffff;
   border: 1px solid var(--border-light);
-  padding: 5px 14px;
+  padding: 6px 16px;
   border-radius: var(--radius-full);
   box-shadow: var(--shadow-subtle);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 600;
   color: var(--text-main);
-  margin-top: 10px;
+  margin-top: 12px;
+}
+
+.stars-flex {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.star-icon {
+  width: 14px;
+  height: 14px;
+  color: #f59e0b;
+  flex-shrink: 0;
 }
 
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
+  margin-bottom: 22px;
 }
 
 .testimonial-card {
   background: var(--bg-white);
   border-radius: var(--radius-sm);
   padding: 18px 20px;
-  box-shadow: var(--shadow-subtle);
+  box-shadow: var(--shadow-sm);
   border: 1px solid var(--border-light);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1464,21 +1551,34 @@ ul {
 }
 
 .testimonial-stars {
-  color: #eab308;
-  font-size: 0.82rem;
-  letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.verified-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--whatsapp);
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .quote-icon {
   width: 16px;
   height: 16px;
   color: var(--accent-gold);
-  opacity: 0.4;
+  opacity: 0.35;
 }
 
 .testimonial-text {
   color: var(--text-body);
-  font-size: 0.87rem;
+  font-size: 0.88rem;
   line-height: 1.55;
   margin-bottom: 12px;
   flex: 1;
@@ -1498,7 +1598,7 @@ ul {
   height: 32px;
   border-radius: 50%;
   background: linear-gradient(135deg, #0e1e36 0%, #08111e 100%);
-  border: 1px solid var(--accent-gold);
+  border: 1.2px solid var(--accent-gold);
   color: var(--accent-gold-light);
   display: flex;
   align-items: center;
@@ -1527,8 +1627,60 @@ ul {
   font-weight: 600;
 }
 
+/* WhatsApp Feedback Call-To-Action Box */
+.testimonials-cta-box {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 16px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  box-shadow: var(--shadow-subtle);
+  margin-top: 8px;
+}
+
+.testimonials-cta-content h4 {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 2px;
+}
+
+.testimonials-cta-content p {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.btn-whatsapp-feedback {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.86rem;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.btn-whatsapp-feedback:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.45);
+  filter: brightness(1.06);
+}
+
 /* ==========================================================================
-   FAQ Accordion Section
+   FAQ Accordion Section (Clean Vector Chevrons)
    ========================================================================== */
 .faq-section {
   padding: 0;
@@ -1590,10 +1742,8 @@ ul {
 }
 
 .faq-toggle-icon {
-  font-size: 1.25rem;
-  font-weight: 700;
   color: var(--accent-gold-dark);
-  transition: transform 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   width: 24px;
   height: 24px;
   display: flex;
@@ -1604,7 +1754,8 @@ ul {
 }
 
 .faq-accordion-item.active .faq-toggle-icon {
-  transform: rotate(45deg);
+  transform: rotate(180deg);
+  color: var(--accent-gold);
 }
 
 .faq-answer-body {
@@ -1623,6 +1774,10 @@ ul {
   color: var(--text-body);
   font-size: 0.94rem;
   line-height: 1.68;
+}
+
+.section-white {
+  background-color: #ffffff;
 }
 
 /* ==========================================================================

@@ -61,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   faqItems.forEach((item) => {
     const questionBtn = item.querySelector(".faq-question-btn");
-    const toggleIcon = item.querySelector(".faq-toggle-icon");
 
     if (questionBtn) {
       questionBtn.addEventListener("click", () => {
@@ -70,14 +69,11 @@ document.addEventListener("DOMContentLoaded", () => {
         // Close other items for a clean accordion experience
         faqItems.forEach((otherItem) => {
           otherItem.classList.remove("active");
-          const otherIcon = otherItem.querySelector(".faq-toggle-icon");
-          if (otherIcon) otherIcon.textContent = "+";
         });
 
         // Toggle current item
         if (!isActive) {
           item.classList.add("active");
-          if (toggleIcon) toggleIcon.textContent = "−";
         }
       });
     }
