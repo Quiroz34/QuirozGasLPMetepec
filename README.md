@@ -50,12 +50,12 @@ Para ejecutar este proyecto en tu entorno local:
    ```bash
    npm start
    ```
-4. Abre [http://localhost:8080](http://localhost:8080) en tu navegador para visualizar el sitio.
+4. Abre [http://localhost:3000](http://localhost:3000) en tu navegador para visualizar el sitio.
 
 ---
 
 ## 📈 SEO y Optimización
 
 - **Etiquetas Meta**: Incluye descripciones de página específicas y metadatos estructurados para compartirse en redes sociales a través de Open Graph (Facebook/WhatsApp) y Twitter Cards.
-- **Favicon Dinámico**: Utiliza un Favicon moderno en formato SVG embebido directamente en el HTML (emoji 🔥) para evitar recursos rotos y mejorar el rendimiento de carga.
-- **Performance**: Todos los recursos gráficos del directorio `/assets` están optimizados en formato y tamaño para asegurar tiempos de carga rápidos.
+- **Favicon Vectorial**: Utiliza un Favicon moderno en formato SVG vectorial embebido directamente en el HTML con isotipo geométrico de alta gama.
+- **Performance & Responsive**: Optimizado 100% para Android, iPhone, iPad, tablets y equipos de escritorio con barra de acción rápida móvil y diseño fluido.

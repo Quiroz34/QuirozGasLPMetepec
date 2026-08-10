@@ -87,15 +87,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const tankPresetButtons = document.querySelectorAll(".tank-preset-btn");
   const tankSelectedCapDisplay = document.getElementById("calc-selected-cap");
   const tankSelectedTypeDisplay = document.getElementById("calc-selected-type");
+  const tankLevelFill = document.getElementById("tank-level-fill");
+  const tankFillLabel = document.getElementById("tank-fill-label");
   const tankOrderBtn = document.getElementById("calc-order-btn");
 
   const tankPresetsData = {
-    "100": { cap: "100 Litros", type: "Residencial Básico", msg: "Hola,%20quisiera%20solicitar%20suministro%20de%20Gas%20LP%20en%20pipa%20para%20un%20tanque%20estacionario%20de%20100L%20en%20Metepec" },
-    "120": { cap: "120 Litros", type: "Residencial Compacto", msg: "Hola,%20quisiera%20solicitar%20suministro%20de%20Gas%20LP%20en%20pipa%20para%20un%20tanque%20estacionario%20de%20120L%20en%20Metepec" },
-    "180": { cap: "180 Litros", type: "Residencial Estándar", msg: "Hola,%20quisiera%20solicitar%20suministro%20de%20Gas%20LP%20en%20pipa%20para%20un%20tanque%20estacionario%20de%20180L%20en%20Metepec" },
-    "300": { cap: "300 Litros", type: "Residencial Familiar", msg: "Hola,%20quisiera%20solicitar%20suministro%20de%20Gas%20LP%20en%20pipa%20para%20un%20tanque%20estacionario%20de%20300L%20en%20Metepec" },
-    "500": { cap: "500 Litros", type: "Residencial Plus / Negocio", msg: "Hola,%20quisiera%20solicitar%20suministro%20de%20Gas%20LP%20en%20pipa%20para%20un%20tanque%20estacionario%20de%20500L%20en%20Metepec" },
-    "1000": { cap: "1,000+ Litros", type: "Comercial / Restaurante / Industria", msg: "Hola,%20quisiera%20solicitar%20suministro%20mayorista%20de%20Gas%20LP%20en%20pipa%20para%20tanque%20estacionario%20comercial%20en%20Metepec" }
+    "100": { cap: "100 Litros", type: "Residencial Básico", pct: "22%", msg: "Hola,%20quisiera%20solicitar%20suministro%20de%20Gas%20LP%20en%20pipa%20para%20un%20tanque%20estacionario%20de%20100L%20en%20Metepec" },
+    "120": { cap: "120 Litros", type: "Residencial Compacto", pct: "32%", msg: "Hola,%20quisiera%20solicitar%20suministro%20de%20Gas%20LP%20en%20pipa%20para%20un%20tanque%20estacionario%20de%20120L%20en%20Metepec" },
+    "180": { cap: "180 Litros", type: "Residencial Estándar", pct: "48%", msg: "Hola,%20quisiera%20solicitar%20suministro%20de%20Gas%20LP%20en%20pipa%20para%20un%20tanque%20estacionario%20de%20180L%20en%20Metepec" },
+    "300": { cap: "300 Litros", type: "Residencial Familiar", pct: "65%", msg: "Hola,%20quisiera%20solicitar%20suministro%20de%20Gas%20LP%20en%20pipa%20para%20un%20tanque%20estacionario%20de%20300L%20en%20Metepec" },
+    "500": { cap: "500 Litros", type: "Residencial Plus / Negocio", pct: "85%", msg: "Hola,%20quisiera%20solicitar%20suministro%20de%20Gas%20LP%20en%20pipa%20para%20un%20tanque%20estacionario%20de%20500L%20en%20Metepec" },
+    "1000": { cap: "1,000+ Litros", type: "Comercial / Restaurante / Industria", pct: "100%", msg: "Hola,%20quisiera%20solicitar%20suministro%20mayorista%20de%20Gas%20LP%20en%20pipa%20para%20tanque%20estacionario%20comercial%20en%20Metepec" }
   };
 
   if (tankPresetButtons.length > 0) {
@@ -109,6 +111,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (tankSelectedCapDisplay) tankSelectedCapDisplay.textContent = data.cap;
         if (tankSelectedTypeDisplay) tankSelectedTypeDisplay.textContent = data.type;
+        if (tankLevelFill) tankLevelFill.style.width = data.pct;
+        if (tankFillLabel) tankFillLabel.textContent = data.cap;
         if (tankOrderBtn) {
           tankOrderBtn.href = `https://wa.me/527223891603?text=${data.msg}`;
         }
