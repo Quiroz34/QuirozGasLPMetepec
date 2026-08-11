@@ -19,12 +19,12 @@ El proyecto está organizado siguiendo buenas prácticas de desarrollo web front
 
 ```text
 QuirozGasLPMetepec/
-├── assets/                  # Fotos y recursos visuales optimizados
-│   ├── delivery-truck-house.jpg
-│   ├── fleet.jpg            # Foto real de la flotilla de pipas
-│   ├── hero-quiroz-truck.png
-│   ├── pipa.jpg             # Foto real de la pipa de entrega
-│   └── refill_stationary.jpg # Foto del llenado de tanque estacionario
+├── assets/                  # Fotos y recursos visuales optimizados para SEO Local
+│   ├── flotilla-pipas-gas-lp-metepec.jpg
+│   ├── gas-lp-a-domicilio-metepec-24-7.jpg
+│   ├── gas-lp-en-metepec-pipa-profeco.jpg
+│   ├── gas-lp-metepec-24-7-quiroz-pipa.png
+│   └── recarga-tanques-estacionarios-gas-lp-metepec.jpg
 ├── css/                     # Hojas de estilo estructuradas
 │   └── styles.css           # Estilos generales y animaciones
 ├── js/                      # Scripts interactivos

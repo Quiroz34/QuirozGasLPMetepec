@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Allow: /assets/
+Allow: /css/
+Allow: /js/
 
 Sitemap: https://gaslpquiroz.com/sitemap.xml
+Host: https://gaslpquiroz.com
