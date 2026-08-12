@@ -1,0 +1,49 @@
+{
+  "name": "Gas LP Quiroz Metepec - Suministro en Pipa 24/7",
+  "short_name": "Gas LP Quiroz",
+  "description": "Suministro express de Gas LP para tanques estacionarios en Metepec. Entregas en 20-35 min con medidores certificados PROFECO.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#060a12",
+  "theme_color": "#04070d",
+  "orientation": "portrait",
+  "lang": "es-MX",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23dfc08a'/%3E%3Cstop offset='50%25' stop-color='%23c5a059'/%3E%3Cstop offset='100%25' stop-color='%23a8813f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='192' height='192' rx='40' fill='%230a1322'/%3E%3Cpath d='M96 38 C80 67 61 86 61 111 C61 134 76 150 96 150 C116 150 131 134 131 111 C131 86 112 67 96 38 Z' fill='url(%23g)'/%3E%3Ccircle cx='96' cy='119' r='15' fill='%230a1322'/%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23dfc08a'/%3E%3Cstop offset='50%25' stop-color='%23c5a059'/%3E%3Cstop offset='100%25' stop-color='%23a8813f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='512' height='512' rx='110' fill='%230a1322'/%3E%3Cpath d='M256 100 C213 180 162 230 162 296 C162 357 203 400 256 400 C309 400 350 357 350 296 C350 230 299 180 256 100 Z' fill='url(%23g)'/%3E%3Ccircle cx='256' cy='317' r='40' fill='%230a1322'/%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Llamar a Pipa Express",
+      "short_name": "Llamar",
+      "description": "Llamada directa para pedir Gas LP en Metepec",
+      "url": "tel:+527223891603",
+      "icons": [{ "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23c5a059'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E", "sizes": "96x96" }]
+    },
+    {
+      "name": "Pedir por WhatsApp",
+      "short_name": "WhatsApp",
+      "description": "Enviar pedido de Gas LP por WhatsApp a Metepec",
+      "url": "https://wa.me/527223891603?text=Hola,%20quisiera%20solicitar%20Gas%20LP%20en%20Metepec",
+      "icons": [{ "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2310b981'%3E%3Cpath d='M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z'/%3E%3C/svg%3E", "sizes": "96x96" }]
+    },
+    {
+      "name": "Cotizar Tanque",
+      "short_name": "Cotizador",
+      "description": "Calcular capacidad de tanque estacionario",
+      "url": "/#Calculadora",
+      "icons": [{ "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23c5a059'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3C/svg%3E", "sizes": "96x96" }]
+    }
+  ]
+}
