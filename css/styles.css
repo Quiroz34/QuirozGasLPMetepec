@@ -376,29 +376,27 @@ ul {
   height: 54px;
   max-width: 60px;
   object-fit: contain;
-  border-radius: 12px;
-  border: 1.2px solid rgba(197, 160, 89, 0.45);
-  box-shadow: 0 4px 14px rgba(9, 17, 30, 0.15);
+  filter: drop-shadow(0 4px 10px rgba(9, 17, 30, 0.18));
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  background: #ffffff;
-  padding: 2px;
+  background: transparent;
+  padding: 0;
+  border: none;
   flex-shrink: 0;
 }
 
 .brand-logo:hover .brand-logo-img {
-  transform: translateY(-2px) scale(1.04);
-  border-color: var(--accent-gold);
-  box-shadow: 0 6px 20px rgba(197, 160, 89, 0.35);
+  transform: translateY(-2px) scale(1.05);
+  filter: drop-shadow(0 6px 18px rgba(197, 160, 89, 0.45));
 }
 
 .footer-logo-img {
   width: auto;
   height: 56px;
   max-width: 62px;
-  background: #ffffff;
-  border: 1.5px solid rgba(197, 160, 89, 0.6);
-  padding: 2px;
-  border-radius: 12px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
 }
 
 .brand-logo-icon {
