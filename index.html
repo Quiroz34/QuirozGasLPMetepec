@@ -147,7 +147,7 @@
     <link rel="preload" as="image" href="assets/gas-lp-metepec-24-7-quiroz-pipa.png" fetchpriority="high" />
 
     <!-- Custom Executive Style -->
-    <link rel="stylesheet" href="css/styles.css?v=4.4" />
+    <link rel="stylesheet" href="css/styles.css?v=11.0" />
 
     <!-- Schema.org JSON-LD Structured Data for Local SEO, Voice Search & Rich Snippets -->
     <script type="application/ld+json">
@@ -449,9 +449,9 @@
     <div class="top-bar">
       <div class="container top-bar-container">
         <div class="top-bar-left">
-          <span class="live-indicator">
+          <span class="live-indicator" id="live-service-indicator">
             <span class="live-dot pulse-radar"></span>
-            GRUPO QUIROZ • <span id="live-trucks-count">3 PIPAS</span> EN RUTA METEPEC
+            <span id="live-service-text">GRUPO QUIROZ • PIPAS EN SERVICIO</span>
           </span>
           <span class="top-bar-notice">Llegada Express: <strong>20–35 min</strong></span>
         </div>
@@ -746,40 +746,52 @@
             <!-- Interactive Fraccionamientos Selector -->
             <div class="colonia-picker-grid" id="colonia-picker-grid">
               <button class="colonia-chip-btn active" data-zone="Residencial La Asunción" data-eta="20 a 30 min">
-                <span class="chip-pin">📍</span> La Asunción
+                <svg class="chip-pin-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                La Asunción
               </button>
               <button class="colonia-chip-btn" data-zone="Residencial Providencia" data-eta="20 a 30 min">
-                <span class="chip-pin">📍</span> Providencia
+                <svg class="chip-pin-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Providencia
               </button>
               <button class="colonia-chip-btn" data-zone="Residencial Foresta" data-eta="25 a 35 min">
-                <span class="chip-pin">📍</span> Foresta
+                <svg class="chip-pin-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Foresta
               </button>
               <button class="colonia-chip-btn" data-zone="Bellavista Metepec" data-eta="20 a 30 min">
-                <span class="chip-pin">📍</span> Bellavista
+                <svg class="chip-pin-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Bellavista
               </button>
               <button class="colonia-chip-btn" data-zone="San Carlos Metepec" data-eta="20 a 30 min">
-                <span class="chip-pin">📍</span> San Carlos
+                <svg class="chip-pin-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                San Carlos
               </button>
               <button class="colonia-chip-btn" data-zone="San Jerónimo Chicahualco" data-eta="20 a 30 min">
-                <span class="chip-pin">📍</span> Chicahualco
+                <svg class="chip-pin-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Chicahualco
               </button>
               <button class="colonia-chip-btn" data-zone="San Salvador Tizatlalli" data-eta="20 a 30 min">
-                <span class="chip-pin">📍</span> San Salvador
+                <svg class="chip-pin-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                San Salvador
               </button>
               <button class="colonia-chip-btn" data-zone="Centro de Metepec" data-eta="15 a 25 min">
-                <span class="chip-pin">📍</span> Centro
+                <svg class="chip-pin-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Centro
               </button>
               <button class="colonia-chip-btn" data-zone="Coaxustenco Metepec" data-eta="20 a 30 min">
-                <span class="chip-pin">📍</span> Coaxustenco
+                <svg class="chip-pin-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Coaxustenco
               </button>
               <button class="colonia-chip-btn" data-zone="Infonavit San Francisco" data-eta="20 a 30 min">
-                <span class="chip-pin">📍</span> Infonavit San Fco.
+                <svg class="chip-pin-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Infonavit San Fco.
               </button>
               <button class="colonia-chip-btn" data-zone="Llano Grande Metepec" data-eta="25 a 35 min">
-                <span class="chip-pin">📍</span> Llano Grande
+                <svg class="chip-pin-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Llano Grande
               </button>
               <button class="colonia-chip-btn" data-zone="San Gaspar Tlahuelilpan" data-eta="25 a 35 min">
-                <span class="chip-pin">📍</span> San Gaspar
+                <svg class="chip-pin-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                San Gaspar
               </button>
             </div>
 
@@ -1140,10 +1152,7 @@
           >
             Nuestro personal en Metepec está altamente capacitado bajo los más exigentes estándares de protección civil y prevención de riesgos.
           </p>
-          <ul
-            class="bullet-list-single"
-            style="margin-bottom: 30px; color: white"
-          >
+          <ul class="bullet-list-single">
             <li>Medidores digitales certificados PROFECO en cada pipa</li>
             <li>Protocolos de revisión anti-fugas sin costo</li>
             <li>Operadores certificados, uniformados y calificados</li>
@@ -1677,6 +1686,6 @@
     </div>
 
     <!-- Behavior Script -->
-    <script src="js/script.js"></script>
+    <script src="js/script.js?v=11.0"></script>
   </body>
 </html>

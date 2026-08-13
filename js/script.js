@@ -2,7 +2,7 @@
    Gas LP Quiroz Metepec - Interactivity, Calculators, Copy Phone & Behaviors
    ========================================================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+function initGasQuiroz() {
   // 1. Mobile Menu Toggler
   const mobileToggleBtn = document.querySelector(".mobile-toggle");
   const navMenu = document.querySelector(".nav-menu");
@@ -234,14 +234,85 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 8. Dynamic Live Truck Status Simulator
-  const liveTrucksCount = document.getElementById("live-trucks-count");
-  if (liveTrucksCount) {
-    const truckCounts = ["3 PIPAS", "4 PIPAS", "3 PIPAS", "4 PIPAS"];
-    let countIdx = 0;
-    setInterval(() => {
-      countIdx = (countIdx + 1) % truckCounts.length;
-      liveTrucksCount.textContent = truckCounts[countIdx];
-    }, 45000);
+  // 8. Dynamic Service Schedule Clock (6:00 AM - 7:00 PM: PIPAS EN SERVICIO [Verde], Fuera de horario: ENCIERRE DE UNIDADES [Rojo])
+  function updateServiceScheduleStatus() {
+    const serviceIndicator = document.getElementById("live-service-indicator");
+    const serviceText = document.getElementById("live-service-text");
+    if (!serviceIndicator || !serviceText) return;
+
+    const now = new Date();
+    const currentHour = now.getHours();
+    const currentMin = now.getMinutes();
+    const totalMinutes = currentHour * 60 + currentMin;
+
+    // 6:00 AM (360 min) hasta 7:00 PM (1140 min)
+    const isOpen = totalMinutes >= 360 && totalMinutes < 1140;
+
+    if (isOpen) {
+      serviceIndicator.classList.remove("closed");
+      serviceText.textContent = "GRUPO QUIROZ • PIPAS EN SERVICIO";
+    } else {
+      serviceIndicator.classList.add("closed");
+      serviceText.textContent = "GRUPO QUIROZ • ENCIERRE DE UNIDADES";
+    }
   }
-});
+
+  updateServiceScheduleStatus();
+  setInterval(updateServiceScheduleStatus, 30000);
+
+  // 9. Interactive Luxury Card Spotlight Effect (Apple/Stripe style)
+  const spotlightCards = document.querySelectorAll(
+    ".why-us-item, .testimonial-card, .cert-badge-item, .tank-preset-btn, .faq-accordion-item, .selected-colonia-box"
+  );
+  spotlightCards.forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty("--mouse-x", `${x}px`);
+      card.style.setProperty("--mouse-y", `${y}px`);
+    });
+  });
+
+  // 10. Precision Metrics Count-Up Animation
+  const metricsStrip = document.querySelector(".trust-metrics-card");
+  let hasCounted = false;
+
+  if (metricsStrip && "IntersectionObserver" in window) {
+    const metricObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !hasCounted) {
+          hasCounted = true;
+          animateTrustNumbers();
+          metricObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    metricObserver.observe(metricsStrip);
+  }
+
+  function animateTrustNumbers() {
+    const metricValues = document.querySelectorAll(".trust-metric-value");
+    metricValues.forEach((item) => {
+      const text = item.textContent.trim();
+      if (text.includes("100%")) {
+        let count = 0;
+        const timer = setInterval(() => {
+          count += 4;
+          if (count >= 100) {
+            count = 100;
+            clearInterval(timer);
+          }
+          item.textContent = `${count}% Calibrado`;
+        }, 22);
+      }
+    });
+  }
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initGasQuiroz);
+} else {
+  initGasQuiroz();
+}
