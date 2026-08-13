@@ -4,5 +4,5 @@ Allow: /assets/
 Allow: /css/
 Allow: /js/
 
-Sitemap: https://gaslpquiroz.com/sitemap.xml
-Host: https://gaslpquiroz.com
+Sitemap: https://gasmetepec.com/sitemap.xml
+Host: https://gasmetepec.com
