@@ -4,5 +4,6 @@ Allow: /assets/
 Allow: /css/
 Allow: /js/
 
-Sitemap: https://gasmetepec.com/sitemap.xml
-Host: https://gasmetepec.com
+Sitemap: https://www.gasmetepec.com/sitemap.xml
+Host: https://www.gasmetepec.com
+
