@@ -3,38 +3,38 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.gasmetepec.com/</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://www.gasmetepec.com/assets/gas-lp-metepec-24-7-quiroz-pipa.png</image:loc>
-      <image:title>Pipa de Gas LP Quiroz en Suministro Express Metepec 24/7</image:title>
-      <image:caption>Suministro express y prioritario de Gas LP 24/7 para tanques estacionarios en Metepec, Estado de México.</image:caption>
-      <image:geo_location>Metepec, Estado de México</image:geo_location>
+      <image:title>Pipa de Gas LP Quiroz en Suministro Express Metepec y Toluca 24/7</image:title>
+      <image:caption>Suministro express y prioritario de Gas LP 24/7 para tanques estacionarios en Metepec, Toluca y Valle de Toluca, Estado de México.</image:caption>
+      <image:geo_location>Metepec y Toluca, Estado de México</image:geo_location>
     </image:image>
     <image:image>
       <image:loc>https://www.gasmetepec.com/assets/gas-lp-en-metepec-pipa-profeco.jpg</image:loc>
-      <image:title>Pipa de Gas LP Quiroz con Medidores Digitales PROFECO en Metepec</image:title>
-      <image:caption>Suministro express de Gas LP en pipa para tanques estacionarios 24/7 en Metepec, Estado de México.</image:caption>
-      <image:geo_location>Metepec, Estado de México</image:geo_location>
+      <image:title>Pipa de Gas LP Quiroz con Medidores Digitales PROFECO en Metepec y Toluca</image:title>
+      <image:caption>Suministro express de Gas LP en pipa para tanques estacionarios 24/7 en Metepec, Toluca y municipios conurbados, Estado de México.</image:caption>
+      <image:geo_location>Metepec y Toluca, Estado de México</image:geo_location>
     </image:image>
     <image:image>
       <image:loc>https://www.gasmetepec.com/assets/gas-lp-a-domicilio-metepec-24-7.jpg</image:loc>
-      <image:title>Suministro de Gas LP a Domicilio en Fraccionamientos de Metepec</image:title>
-      <image:caption>Entrega puntual de Gas LP en 20 a 35 minutos para residencias y condominios en Metepec.</image:caption>
-      <image:geo_location>Metepec, Estado de México</image:geo_location>
+      <image:title>Suministro de Gas LP a Domicilio en Fraccionamientos de Metepec y Toluca</image:title>
+      <image:caption>Entrega puntual de Gas LP en 20 a 35 minutos para residencias, negocios y condominios en Metepec y Toluca.</image:caption>
+      <image:geo_location>Metepec y Toluca, Estado de México</image:geo_location>
     </image:image>
     <image:image>
       <image:loc>https://www.gasmetepec.com/assets/flotilla-pipas-gas-lp-metepec.jpg</image:loc>
-      <image:title>Flotilla Moderna de Pipas de Gas LP Quiroz en Metepec</image:title>
-      <image:caption>Unidades modernas con monitoreo GPS y cobertura integral en todas las colonias de Metepec.</image:caption>
-      <image:geo_location>Metepec, Estado de México</image:geo_location>
+      <image:title>Flotilla Moderna de Pipas de Gas LP Quiroz en Metepec y Toluca</image:title>
+      <image:caption>Unidades modernas con monitoreo GPS y cobertura integral en todas las colonias de Metepec y Toluca.</image:caption>
+      <image:geo_location>Metepec y Toluca, Estado de México</image:geo_location>
     </image:image>
     <image:image>
       <image:loc>https://www.gasmetepec.com/assets/recarga-tanques-estacionarios-gas-lp-metepec.jpg</image:loc>
-      <image:title>Recarga y Verificación Técnica de Tanques Estacionarios de Gas LP en Metepec</image:title>
-      <image:caption>Protocolo de seguridad certificado, garantía Litro por Litro e inspección técnica anti-fugas sin costo.</image:caption>
-      <image:geo_location>Metepec, Estado de México</image:geo_location>
+      <image:title>Recarga y Verificación Técnica de Tanques Estacionarios de Gas LP en Metepec y Toluca</image:title>
+      <image:caption>Protocolo de seguridad certificado, garantía Litro por Litro e inspección técnica anti-fugas sin costo en Metepec y Toluca.</image:caption>
+      <image:geo_location>Metepec y Toluca, Estado de México</image:geo_location>
     </image:image>
   </url>
 </urlset>

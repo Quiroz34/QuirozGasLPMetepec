@@ -111,11 +111,40 @@ function initGasQuiroz() {
     });
   });
 
-  // 6. Interactive Metepec Fraccionamientos / Colonia Selector
+  // 6. Interactive Metepec, Toluca & Conurbados Fraccionamientos / Colonia Selector
+  const zoneFilterButtons = document.querySelectorAll(".zone-filter-btn");
   const coloniaButtons = document.querySelectorAll(".colonia-chip-btn");
   const selectedZoneName = document.getElementById("selected-zone-name");
   const selectedZoneEta = document.getElementById("selected-zone-eta");
   const coloniaOrderBtn = document.getElementById("colonia-order-btn");
+
+  if (zoneFilterButtons.length > 0 && coloniaButtons.length > 0) {
+    zoneFilterButtons.forEach((fBtn) => {
+      fBtn.addEventListener("click", () => {
+        zoneFilterButtons.forEach((b) => b.classList.remove("active"));
+        fBtn.classList.add("active");
+
+        const filter = fBtn.getAttribute("data-filter") || "all";
+        let firstVisibleBtn = null;
+
+        coloniaButtons.forEach((cBtn) => {
+          const muni = cBtn.getAttribute("data-muni") || "metepec";
+          if (filter === "all" || muni === filter) {
+            cBtn.classList.remove("hidden");
+            if (!firstVisibleBtn) firstVisibleBtn = cBtn;
+          } else {
+            cBtn.classList.add("hidden");
+          }
+        });
+
+        // If the current active is now hidden, activate the first visible one
+        const currentActive = document.querySelector(".colonia-chip-btn.active");
+        if (currentActive && currentActive.classList.contains("hidden") && firstVisibleBtn) {
+          firstVisibleBtn.click();
+        }
+      });
+    });
+  }
 
   if (coloniaButtons.length > 0) {
     coloniaButtons.forEach((btn) => {
@@ -123,7 +152,7 @@ function initGasQuiroz() {
         coloniaButtons.forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
 
-        const zone = btn.getAttribute("data-zone") || "Metepec";
+        const zone = btn.getAttribute("data-zone") || "Metepec y Toluca";
         const eta = btn.getAttribute("data-eta") || "20 a 30 min";
 
         if (selectedZoneName) selectedZoneName.textContent = zone;
@@ -131,7 +160,7 @@ function initGasQuiroz() {
 
         if (coloniaOrderBtn) {
           const encodedZone = encodeURIComponent(zone);
-          coloniaOrderBtn.href = `https://wa.me/527223891603?text=Hola,%20solicito%20pipa%20de%20Gas%20LP%20express%20para%20${encodedZone},%20Metepec`;
+          coloniaOrderBtn.href = `https://wa.me/527223891603?text=Hola,%20solicito%20pipa%20de%20Gas%20LP%20express%20para%20${encodedZone}`;
         }
       });
     });
