@@ -7,6 +7,23 @@ const PORT = process.env.PORT || 3000;
 // 1. Ocultar huella técnica del servidor (Deshabilitar header X-Powered-By)
 app.disable('x-powered-by');
 
+// 2. Normalización de URLs y Redirecciones Canónicas (SEO Search Console)
+app.use((req, res, next) => {
+  // Redirigir /index.html a / con 301 permanente para evitar indexación duplicada
+  if (req.path === '/index.html') {
+    return res.redirect(301, '/');
+  }
+
+  // Redirigir HTTP a HTTPS si viene por proxy inverso (Render, Heroku, Cloudflare, etc.)
+  const proto = req.headers['x-forwarded-proto'];
+  const host = req.headers.host;
+  if (proto && proto === 'http' && process.env.NODE_ENV === 'production') {
+    return res.redirect(301, `https://${host}${req.url}`);
+  }
+
+  next();
+});
+
 // 2. Middleware de Cabeceras de Seguridad HTTP (OWASP / Enterprise Standard)
 app.use((req, res, next) => {
   // Evitar ataques de Clickjacking (imposibilita embeber el sitio en iframes maliciosos)

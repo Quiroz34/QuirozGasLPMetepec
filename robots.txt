@@ -5,5 +5,5 @@ Allow: /css/
 Allow: /js/
 
 Sitemap: https://www.gasmetepec.com/sitemap.xml
-Host: https://www.gasmetepec.com
+Host: www.gasmetepec.com
 

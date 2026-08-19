@@ -1,0 +1,36 @@
+# ==============================================================================
+# Gas LP Quiroz Metepec - Reglas de Redirección Canónica y Seguridad (.htaccess)
+# ==============================================================================
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 1. Forzar HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # 2. Forzar www (Redireccionar gasmetepec.com a www.gasmetepec.com)
+  RewriteCond %{HTTP_HOST} ^gasmetepec\.com$ [NC]
+  RewriteRule ^(.*)$ https://www.gasmetepec.com/$1 [L,R=301]
+
+  # 3. Redireccionar index.html a la raíz / (Evita error "Página con redirección")
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*index\.html\ HTTP/
+  RewriteRule ^(.*)index\.html$ https://www.gasmetepec.com/$1 [R=301,L]
+
+  # 4. Servir archivos existentes directamente
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # 5. SPA Fallback hacia index.html para rutas virtuales
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Cabeceras de seguridad y caché
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-XSS-Protection "1; mode=block"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
