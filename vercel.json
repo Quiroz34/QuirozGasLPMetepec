@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/gas-lp-a-domicilio-en-metepec", "destination": "/index.html" },
+    { "source": "/gas-lp-a-domicilio-en-metepec/", "destination": "/index.html" },
+    { "source": "/gas-lp-a-domicilio-en-toluca", "destination": "/index.html" },
+    { "source": "/gas-lp-a-domicilio-en-toluca/", "destination": "/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

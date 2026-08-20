@@ -1,7 +1,7 @@
 {
-  "name": "Gas LP Quiroz Metepec y Toluca - Suministro en Pipa 24/7",
+  "name": "Gas LP Quiroz Metepec y Toluca - Servicio y Surtido en Pipa 24/7",
   "short_name": "Gas LP Quiroz",
-  "description": "Suministro express de Gas LP para tanques estacionarios en Metepec y Toluca. Entregas en 20-35 min con medidores certificados PROFECO.",
+  "description": "Servicio y surtido express de Gas LP para tanques estacionarios residenciales, comerciales e industriales en Metepec y Toluca. Entregas en 20-35 min con medidores PROFECO y garantía Litro por Litro.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#060a12",
@@ -9,6 +9,7 @@
   "orientation": "portrait",
   "lang": "es-MX",
   "scope": "/",
+  "categories": ["utilities", "business", "shopping"],
   "icons": [
     {
       "src": "GQ1.png",
@@ -27,21 +28,21 @@
     {
       "name": "Llamar a Pipa Express",
       "short_name": "Llamar",
-      "description": "Llamada directa para pedir Gas LP en Metepec y Toluca",
+      "description": "Llamada directa para pedir Gas LP y surtido express en Metepec y Toluca",
       "url": "tel:+527223891603",
       "icons": [{ "src": "GQ1.png", "sizes": "96x96" }]
     },
     {
       "name": "Pedir por WhatsApp",
       "short_name": "WhatsApp",
-      "description": "Enviar pedido de Gas LP por WhatsApp a Metepec y Toluca",
+      "description": "Enviar pedido de surtido de Gas LP por WhatsApp a Metepec y Toluca",
       "url": "https://wa.me/527223891603?text=Hola,%20quisiera%20solicitar%20Gas%20LP%20en%20Metepec%20o%20Toluca",
       "icons": [{ "src": "GQ1.png", "sizes": "96x96" }]
     },
     {
       "name": "Cotizar Tanque",
       "short_name": "Cotizador",
-      "description": "Calcular capacidad de tanque estacionario",
+      "description": "Calcular capacidad de tanque estacionario y precio de Gas LP",
       "url": "/#Calculadora",
       "icons": [{ "src": "GQ1.png", "sizes": "96x96" }]
     }
