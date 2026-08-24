@@ -1,9 +1,9 @@
 {
   "rewrites": [
-    { "source": "/gas-lp-a-domicilio-en-metepec", "destination": "/index.html" },
-    { "source": "/gas-lp-a-domicilio-en-metepec/", "destination": "/index.html" },
-    { "source": "/gas-lp-a-domicilio-en-toluca", "destination": "/index.html" },
-    { "source": "/gas-lp-a-domicilio-en-toluca/", "destination": "/index.html" },
+    { "source": "/gas-lp-a-domicilio-en-metepec", "destination": "/gas-lp-a-domicilio-en-metepec/index.html" },
+    { "source": "/gas-lp-a-domicilio-en-metepec/", "destination": "/gas-lp-a-domicilio-en-metepec/index.html" },
+    { "source": "/gas-lp-a-domicilio-en-toluca", "destination": "/gas-lp-a-domicilio-en-toluca/index.html" },
+    { "source": "/gas-lp-a-domicilio-en-toluca/", "destination": "/gas-lp-a-domicilio-en-toluca/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

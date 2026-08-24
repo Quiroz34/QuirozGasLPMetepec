@@ -6,9 +6,9 @@ RewriteBase /
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Si la ruta solicitada es /gas-lp-a-domicilio-en-metepec/ o /gas-lp-a-domicilio-en-toluca/, servir index.html
-RewriteRule ^gas-lp-a-domicilio-en-metepec/?$ index.html [L,QSA]
-RewriteRule ^gas-lp-a-domicilio-en-toluca/?$ index.html [L,QSA]
+# Si la ruta solicitada es /gas-lp-a-domicilio-en-metepec/ o /gas-lp-a-domicilio-en-toluca/, servir sus páginas dedicadas
+RewriteRule ^gas-lp-a-domicilio-en-metepec/?$ gas-lp-a-domicilio-en-metepec/index.html [L,QSA]
+RewriteRule ^gas-lp-a-domicilio-en-toluca/?$ gas-lp-a-domicilio-en-toluca/index.html [L,QSA]
 
 # Para cualquier otra ruta que no sea un archivo físico existente, servir index.html
 RewriteCond %{REQUEST_FILENAME} !-f

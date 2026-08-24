@@ -66,7 +66,16 @@ app.use(express.static(path.join(__dirname), {
   maxAge: process.env.NODE_ENV === 'production' ? '1d' : 0
 }));
 
-// 4. Redireccionar rutas no encontradas a index.html de forma limpia
+// 4. Rutas SEO Dedicadas para Metepec y Toluca
+app.get(['/gas-lp-a-domicilio-en-metepec', '/gas-lp-a-domicilio-en-metepec/'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'gas-lp-a-domicilio-en-metepec', 'index.html'));
+});
+
+app.get(['/gas-lp-a-domicilio-en-toluca', '/gas-lp-a-domicilio-en-toluca/'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'gas-lp-a-domicilio-en-toluca', 'index.html'));
+});
+
+// 5. Redireccionar rutas no encontradas a index.html de forma limpia
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
