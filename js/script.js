@@ -338,6 +338,20 @@ function initGasQuiroz() {
       }
     });
   }
+
+  // Fiestas Patrias Promo Banner — Close Button
+  const patriasBanner = document.getElementById('patrias-promo-banner');
+  const patriasCloseBtn = document.getElementById('patrias-close-btn');
+  if (patriasBanner && patriasCloseBtn) {
+    // Hide if already dismissed this session
+    if (sessionStorage.getItem('patriasPromoDismissed') === '1') {
+      patriasBanner.classList.add('hidden');
+    }
+    patriasCloseBtn.addEventListener('click', () => {
+      patriasBanner.classList.add('hidden');
+      sessionStorage.setItem('patriasPromoDismissed', '1');
+    });
+  }
 }
 
 if (document.readyState === "loading") {
