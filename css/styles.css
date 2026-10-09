@@ -5,6 +5,57 @@
    Designed for top-tier enterprise energy infrastructure aesthetic.
    ========================================================================== */
 
+/* Seasonal promotion inspired by Mexican papel picado */
+.muertos-promo { position: relative; overflow: hidden; color: #fff1d5; background: radial-gradient(ellipse at 5% 100%, #702442, transparent 58%), linear-gradient(110deg, #28122e, #421b48 75%, #2a142f); border-bottom: 3px solid #61304e; }
+.muertos-papel { height: 15px; background: repeating-linear-gradient(90deg, #f59c32 0 32px, transparent 32px 40px, #df498f 40px 72px, transparent 72px 80px, #159987 80px 112px, transparent 112px 120px); mask-image: repeating-linear-gradient(135deg, #000 0 18px, transparent 18px 22px, #000 22px 34px); }
+.muertos-papel::after { content: ""; display: block; height: 100%; background: radial-gradient(circle, #301333 2px, transparent 3px) 0 0 / 16px 10px; }
+.muertos-promo .muertos-promo-inner { display: grid; grid-template-columns: minmax(280px, 1.4fr) minmax(200px, 1fr) 210px auto; gap: 24px; align-items: center; max-width: 1480px; padding: 14px 28px 17px; }
+.muertos-intro { display: flex; align-items: center; gap: 16px; }
+.muertos-skull { position: relative; font-size: 54px; line-height: 1; transform: rotate(-12deg); filter: drop-shadow(0 5px 6px #14091c55); }
+.muertos-skull span { position: absolute; color: #ffb638; font-size: 35px; left: -12px; bottom: -12px; }
+.muertos-copy { min-width: 0; }
+.muertos-eyebrow { font-size: 9px; font-weight: 800; letter-spacing: 1.8px; color: #ffbd57; margin-bottom: 5px; line-height: 1.4; }
+.muertos-copy h2 { font-family: Georgia, serif; font-size: 29px; font-weight: 700; line-height: 1.05; color: #fff1d5; margin: 0; }
+.muertos-copy h2 em { color: #ffbb57; }
+.muertos-brand { color: #e6cadf; font-size: 10px; line-height: 1.5; margin-top: 6px; }
+.muertos-tradition { position: relative; font-family: Georgia, serif; font-size: 26px; line-height: 1.1; color: #ffcc77; padding-right: 40px; justify-self: center; }
+.muertos-tradition em { color: #fff1d5; }
+.muertos-tradition span { position: absolute; right: 0; top: 8px; font-size: 36px; }
+.muertos-gift { align-self: stretch; display: flex; flex-direction: column; justify-content: center; text-align: center; border-inline: 1px dashed #f1b55355; padding: 0 14px; }
+.muertos-quantity { display: flex; justify-content: center; align-items: center; gap: 10px; transform: rotate(-3deg); }
+.muertos-quantity > strong { font-family: Georgia, serif; font-size: 72px; line-height: .9; color: #ffd17b; text-shadow: 3px 3px 0 #b95841; }
+.muertos-quantity > span { font-size: 18px; line-height: 1.2; font-weight: 800; }
+.muertos-quantity small { display: block; font-size: 10px; letter-spacing: 1px; color: #ffbd57; margin-top: 4px; }
+.muertos-terms { color: #f6e2ee; font-size: 10px; line-height: 1.4; margin-top: 7px; }
+.muertos-terms strong { font-weight: 700; }
+.muertos-button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 46px; padding: 13px 18px; border-radius: 12px; background: linear-gradient(135deg, #ffd480, #ffb13c); color: #301333; font-size: 13px; font-weight: 800; text-decoration: none; box-shadow: 0 4px 0 #b85b38, 0 10px 22px #160a2233; white-space: nowrap; }
+.muertos-button:hover { background: #ffda98; }
+.muertos-button:focus-visible { outline: 3px solid #fff4dc; outline-offset: 5px; }
+@media (max-width: 1150px) {
+ .muertos-promo .muertos-promo-inner { grid-template-columns: minmax(250px, 1fr) 190px auto; gap: 18px; }
+ .muertos-tradition { display: none; }
+}
+@media (max-width: 700px) {
+ .muertos-promo .muertos-promo-inner { grid-template-columns: minmax(0, 1fr) 135px; gap: 12px 14px; padding: 14px 18px 18px; }
+ .muertos-intro { gap: 9px; }
+ .muertos-skull { font-size: 35px; }
+ .muertos-skull span { font-size: 24px; left: -6px; bottom: -9px; }
+ .muertos-eyebrow { font-size: 8px; letter-spacing: .7px; }
+ .muertos-copy h2 { font-size: clamp(21px, 4.8vw, 28px); }
+ .muertos-brand { font-size: 9px; max-width: 200px; }
+ .muertos-gift { padding: 0 0 0 10px; border-right: 0; }
+ .muertos-quantity { gap: 6px; }
+ .muertos-quantity > strong { font-size: 57px; }
+ .muertos-quantity > span { font-size: 14px; }
+ .muertos-quantity small { font-size: 8px; letter-spacing: .5px; }
+ .muertos-terms { font-size: 9px; }
+ .muertos-button { grid-column: 1 / -1; justify-self: center; min-height: 44px; width: min(100%, 330px); padding: 10px 16px; font-size: 12px; }
+}
+@media (max-width: 370px) {
+ .muertos-promo .muertos-promo-inner { padding-inline: 12px; gap: 12px 8px; grid-template-columns: minmax(0, 1fr) 120px; }
+ .muertos-skull { display: none; }
+}
+
 :root {
   /* Obsidian & Titanium Canvas */
   --obsidian-950: #03060d;
